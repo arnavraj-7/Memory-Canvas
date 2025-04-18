@@ -14,11 +14,13 @@ import SignInUp from "./appcomponents/SignInUp";
 import "./index.css";
 import CreateAccount from "./appcomponents/CreateAccount";
 import Card from "./appcomponents/Card";
-
+import Home from "./appcomponents/Home";
+import AddImage from "./appcomponents/AddImage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />}>
+    <Route path="/" element={<App />}>
+      <Route index element={<Home/>}/>
       <Route path="Login" element={<SignInUp />}>
         <Route index element={<Login />} />
       </Route>

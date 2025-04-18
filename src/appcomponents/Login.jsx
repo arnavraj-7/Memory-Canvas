@@ -4,14 +4,17 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { motion } from "motion/react";
+import { useData } from "@/contexts/UserData";
+import { useActiveUser } from "@/contexts/ActiveUser";
 
 const Login = () => {
+  const {data,setdata}=useData();
   let [usernames, setusername] = useState([]);
   let [users, setusers] = useState([]);
   let [entered_email, setentered_email] = useState("");
   let [entered_password, setentered_password] = useState("");
   let [show, setShow] = useState(false);
-
+  const {active,setactive}=useActiveUser();
   //Fetching credentials
   useEffect(() => {
     setusername(JSON.parse(localStorage.getItem("unames")) || []);
@@ -22,6 +25,7 @@ const Login = () => {
 
   //Console the credentials
   useEffect(() => {
+    setdata(users)
     console.log("Users in state:", users); // Logs updated users when state changes
   }, [users]);
 
@@ -32,15 +36,11 @@ const Login = () => {
   }
 
   function verifyLogin() {
-    for (let i = 0; i < users.length; i++) {
-      console.log(users[i]["password"]);
-      if (
-        users[i].email == entered_email &&
-        users[i]["password"] == entered_password
-      ) {
-        return true;
-      }
+    users.find((user)=>user.email==entered_email && user.password==entered_password?setactive(user):setactive(null))
+    if(active){
+      return true;
     }
+
     return false;
   }
 

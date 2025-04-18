@@ -55,6 +55,7 @@ const CreateAccount = () => {
           name: entered_name,
           email: entered_email,
           password: entered_password,
+          loggedin:false,
         },
       ]);
       alert("Sign Up Successful");
