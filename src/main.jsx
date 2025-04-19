@@ -15,7 +15,10 @@ import "./index.css";
 import CreateAccount from "./appcomponents/CreateAccount";
 import Card from "./appcomponents/Card";
 import Home from "./appcomponents/Home";
-import AddImage from "./appcomponents/AddImage";
+import NavBar from "./appcomponents/NavBar";
+import AddImage from "./appcomponents/Upload";
+import NotFound from "./appcomponents/NotFound";
+import ProtectedRoute from "./appcomponents/ProtectedRoute";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,9 +30,10 @@ const router = createBrowserRouter(
       <Route path="CreateAccount" element={<SignInUp />}>
         <Route index element={<CreateAccount />} />
       </Route>
-      <Route path="Gallery" element={<Gallery />} />
-      <Route path="Card" element={<Card />} />
-      <Route path="Profile" element={<Profile />} />
+
+      <Route path="Gallery" element={<><ProtectedRoute><NavBar/><Gallery /></ProtectedRoute></>} />
+      <Route path="Profile" element={<><ProtectedRoute><NavBar/><Profile /></ProtectedRoute></>} />
+      <Route path="/*" element={<NotFound/>}/>
     </Route>
   )
 );

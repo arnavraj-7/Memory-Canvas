@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useActiveUser } from "../contexts/ActiveUser";
 import { use } from "react";
 import { useEffect } from "react";
-const AddImage = () => {
+import {useNavigate} from "react-router-dom"
+const Upload = () => {
   const {active, setactive} = useActiveUser({
 
   })
@@ -18,13 +19,14 @@ const AddImage = () => {
     description: description,
   };
   const [newUpload, setnewUpload] = useState(c);
+  const navigate=useNavigate();
   useEffect(()=>{
     setnewUpload(c)
   },[url,title,description])
-
+console.log(active,active.uploads);
   return (
     <>
-    <div className="bg-gray-950 h-screen text-white">
+    <div className="bg-gray-950 h-auto text-white px-8">
 
       <div className="text-center text-white">Add Image</div>
       <div className="m-4">
@@ -32,12 +34,16 @@ const AddImage = () => {
           action=""
           onSubmit={(e) => {
             e.preventDefault();
-            setactive((prev)=>({...prev,uploads: [...prev.uploads,newUpload]}));
-
+            setactive((prev)=>({...prev,uploads: [...
+              (prev.uploads||[]),newUpload]}));
+              toast.success("Image Uploaded!",{
+                description:`${title} has been uploaded to your gallery.`,
+              duration:3000,              })
+              
           }}
         >
           <div className="">
-            <div className="flex flex-col gap-y-3">
+            <div className="flex flex-col gap-y-3 h-auto">
               <div className="flex flex-row items-center gap-x-2">
               <label htmlFor="check" >Upload local image </label>
               <input type="checkbox" name="check" id="check" value={local} onChange={(e)=> local==false?setlocal(true):setlocal(false)} />
@@ -59,6 +65,7 @@ const AddImage = () => {
               type="url"
               className="bg-gray-600 rounded pl-2 h-8
          text-white"
+         required
               name="img"
               placeholder="Enter the image URL"
               disabled={local}
@@ -67,6 +74,7 @@ const AddImage = () => {
             />
             <label htmlFor="title">Title:</label>
             <input
+            required
               type="text"
               className="bg-gray-600 rounded pl-2 h-8
          text-white"
@@ -97,4 +105,4 @@ const AddImage = () => {
   );
 };
 
-export default AddImage;
+export default Upload;

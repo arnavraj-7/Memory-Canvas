@@ -8,16 +8,14 @@ const Home = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-black">
             <motion.div
-                
-                className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-[length:200%_200%]"
+                className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-900 bg-[length:200%_200%]"
                 initial={{ backgroundPosition: "0% 0%" }}
                 animate={{ backgroundPosition: "100% 100%" }}
                 transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
-              
-            style={{
-                background: "linear-gradient(135deg, #1e3a8a, #9333ea, #db2777)",
-                backgroundSize: "200% 200%",
-            }}
+                style={{
+                    background: "linear-gradient(135deg, #0f172a, #1e293b, #4c1d95)", // Darker gradient
+                    backgroundSize: "200% 200%",
+                }}
             />
             <motion.h1
                 className="text-4xl md:text-6xl font-bold text-white mb-4 z-10"

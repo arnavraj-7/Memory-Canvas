@@ -1,54 +1,59 @@
 import React, { useState } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-
+import { toast } from "sonner";
+import { useUser } from "@/contexts/UserContext";
 const CreateAccount = () => {
   const initialMount1 = React.useRef(true);
   const initialMount2 = React.useRef(true);
   const { Theme, handleTheme } = useTheme();
   const [error, setError] = useState("");
   const navigate = useNavigate();
-    let [usernames, setusername] = useState([]);
-    let [users, setusers] = useState([]);
+    // let [usernames, setusername] = useState([]);
+    let {users, setusers} = useUser();
     let [entered_email, setentered_email] = useState("");
     let [entered_password, setentered_password] = useState("");
     let [entered_name, setentered_name] = useState("");
-    useEffect(() => {
-      let s_username = localStorage.getItem("unames");
-      setusername(JSON.parse(s_username) || []);
-    }, []);
-    useEffect(() => {
-      let s_users = JSON.parse(localStorage.getItem("users")) || [];
-      setusers((s_users)|| []);
-  }, []);
-  useEffect(() => {
-    if (initialMount1.current){
-      initialMount1.current = false;
-      console.log(usernames);
-      return;
-    }
-    localStorage.setItem("unames", JSON.stringify(usernames));
-  }, [usernames]);
-  useEffect(() => {
-    if (initialMount2.current){
-      initialMount2.current = false;
-      console.log(users);
-      return;
-    }
-    localStorage.setItem("users", JSON.stringify(users));
-  }, [users]);
+  //   useEffect(() => {
+  //     let s_username = localStorage.getItem("unames");
+  //     setusername(JSON.parse(s_username) || []);
+  //   }, []);
+  //   useEffect(() => {
+  //     let s_users = JSON.parse(localStorage.getItem("users")) || [];
+  //     setusers((s_users)|| []);
+  // }, []);
+  // useEffect(() => {
+  //   if (initialMount1.current){
+  //     initialMount1.current = false;
+  //     console.log(usernames);
+  //     return;
+  //   }
+  //   localStorage.setItem("unames", JSON.stringify(usernames));
+  // }, [usernames]);
+  // useEffect(() => {
+  //   if (initialMount2.current){
+  //     initialMount2.current = false;
+  //     console.log(users);
+  //     return;
+  //   }
+  //   localStorage.setItem("users", JSON.stringify(users));
+  // }, [users]);
 
-  function setUsername() {
-    if (usernames.includes(entered_email)) {
-      return false;
-    }
-    setusername((prev) => [...prev, entered_email]);
-    return true;
+  // function setUsername() {
+  //   if (usernames.includes(entered_email)) {
+  //     return false;
+  //   }
+  //   setusername((prev) => [...prev, entered_email]);
+  //   return true;
+  // }
+  function checkUsedEmail(){
+    const used =users.find((user)=>user.email==entered_email)
+    return used?true:false
   }
 
+
   function verifySignUp() {
-    if (setUsername()) {
+    if (!checkUsedEmail()) {
       setusers((prev) => [
         ...prev,
         {
@@ -56,9 +61,12 @@ const CreateAccount = () => {
           email: entered_email,
           password: entered_password,
           loggedin:false,
+          uploads:[]
         },
       ]);
-      alert("Sign Up Successful");
+      toast.success("SignUp Successful", {
+        description: `Kindly Login`,
+        duration: 3000,})
       setentered_name("");
       setentered_email("");
       setentered_password("");
@@ -67,7 +75,10 @@ const CreateAccount = () => {
       }, 100);
       return;
     }
-    alert("Sign Up Failed");
+    toast.error("SignUp Failed",{
+      description:'Email already registered',
+      duration:3000
+    })
   }
   return (
     <div>

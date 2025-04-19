@@ -4,28 +4,26 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { motion } from "motion/react";
-import { useData } from "@/contexts/UserData";
+import { useUser } from "@/contexts/UserContext";
 import { useActiveUser } from "@/contexts/ActiveUser";
+import { toast } from "sonner";
 
 const Login = () => {
-  const {data,setdata}=useData();
-  let [usernames, setusername] = useState([]);
-  let [users, setusers] = useState([]);
+  const { users, setusers } = useUser();
   let [entered_email, setentered_email] = useState("");
   let [entered_password, setentered_password] = useState("");
   let [show, setShow] = useState(false);
-  const {active,setactive}=useActiveUser();
+  const { active, setactive } = useActiveUser();
   //Fetching credentials
-  useEffect(() => {
-    setusername(JSON.parse(localStorage.getItem("unames")) || []);
-    setusers(JSON.parse(localStorage.getItem("users")) || []);
-    console.log("USERS:", users);
-    console.log("usernames:", usernames);
-  }, []);
+  // useEffect(() => {
+  //   setusername(JSON.parse(localStorage.getItem("unames")) || []);
+  //   setusers(JSON.parse(localStorage.getItem("users")) || []);
+  //   console.log("USERS:", users);
+  // }, []);
 
   //Console the credentials
   useEffect(() => {
-    setdata(users)
+    // setusers(users);
     console.log("Users in state:", users); // Logs updated users when state changes
   }, [users]);
 
@@ -36,11 +34,25 @@ const Login = () => {
   }
 
   function verifyLogin() {
-    users.find((user)=>user.email==entered_email && user.password==entered_password?setactive(user):setactive(null))
-    if(active){
+    const founduser = users.find(
+      (user) => user.email == entered_email && user.password == entered_password
+    );
+    console.log(founduser);
+    if (founduser) {
+      toast.success("Login Successful", {
+        description: `Welcome Back ${founduser.name}`,
+        duration: 3000,
+      });
+      setactive(founduser);
+      localStorage.setItem("active", JSON.stringify(founduser));
+
       return true;
     }
-
+    toast.error("Login Failed", {
+      description: "Kindly recheck your email and password",
+      duration: 2000,
+    });
+    setactive(null);
     return false;
   }
 
@@ -61,14 +73,12 @@ const Login = () => {
           onSubmit={(e) => {
             e.preventDefault();
             if (verifyLogin()) {
-              alert("Login Successful");
               setTimeout(() => {
                 setentered_email("");
                 setentered_password("");
               }, 200);
               navigate("/Gallery");
             } else {
-              alert("Login Failed");
             }
             // Dummy validation or API call can go here
             // navigate after signup (adjust as needed)
@@ -95,7 +105,7 @@ const Login = () => {
             <label
               htmlFor="password"
               className="text-sm mb-1 text-gray-500 dark:text-gray-400"
-              s
+            
             >
               Password
             </label>

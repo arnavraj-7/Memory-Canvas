@@ -1,0 +1,64 @@
+Date : 2025-04-20 02:53:41
+Directory : c:\Users\Arnav Raj\Memory Canvas\src
+Total : 22 files,  -9172 codes, -3 comments, -613 blanks, all -9788 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| CSS                |          1 |        -12 |          0 |         -4 |        -16 |
+| TypeScript         |          3 |        -13 |         -2 |         -6 |        -21 |
+| HTML               |          1 |        -13 |          0 |         -5 |        -18 |
+| Docker             |          1 |        -19 |          0 |         -3 |        -22 |
+| JSON with Comments |          2 |        -35 |          0 |         -2 |        -37 |
+| JavaScript         |          2 |        -44 |         -1 |         -4 |        -49 |
+| XML                |          2 |        -46 |          0 |         -2 |        -48 |
+| Markdown           |          2 |        -65 |          0 |        -37 |       -102 |
+| TypeScript JSX     |          3 |       -166 |          0 |        -14 |       -180 |
+| YAML               |          1 |     -2,058 |          0 |       -534 |     -2,592 |
+| JSON               |          4 |     -6,701 |          0 |         -2 |     -6,703 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                            | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                               |         22 |     -9,172 |         -3 |       -613 |     -9,788 |
+| ..                                                                              |         22 |     -9,172 |         -3 |       -613 |     -9,788 |
+| .. (Files)                                                                      |          8 |     -2,194 |         -1 |       -551 |     -2,746 |
+| ..\my-react-router-app                                                          |         14 |     -6,978 |         -2 |        -62 |     -7,042 |
+| ..\my-react-router-app (Files)                                                  |          7 |     -6,752 |         -2 |        -40 |     -6,794 |
+| ..\my-react-router-app\app                                                      |          7 |       -226 |          0 |        -22 |       -248 |
+| ..\my-react-router-app\app (Files)                                              |          3 |        -82 |          0 |        -14 |        -96 |
+| ..\my-react-router-app\app\routes                                               |          1 |        -11 |          0 |         -3 |        -14 |
+| ..\my-react-router-app\app\welcome                                              |          3 |       -133 |          0 |         -5 |       -138 |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                        | language           | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\Arnav Raj\Memory Canvas\README.md                                      | Markdown           |         -8 |          0 |         -6 |        -14 |
+| c:\Users\Arnav Raj\Memory Canvas\components.json                                | JSON               |        -21 |          0 |          0 |        -21 |
+| c:\Users\Arnav Raj\Memory Canvas\eslint.config.js                               | JavaScript         |        -32 |          0 |         -2 |        -34 |
+| c:\Users\Arnav Raj\Memory Canvas\index.html                                     | HTML               |        -13 |          0 |         -5 |        -18 |
+| c:\Users\Arnav Raj\Memory Canvas\jsconfig.json                                  | JSON with Comments |         -8 |          0 |         -1 |         -9 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\Dockerfile                 | Docker             |        -19 |          0 |         -3 |        -22 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\README.md                  | Markdown           |        -57 |          0 |        -31 |        -88 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\app.css                | CSS                |        -12 |          0 |         -4 |        -16 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\root.tsx               | TypeScript JSX     |        -68 |          0 |         -8 |        -76 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\routes.ts              | TypeScript         |         -2 |          0 |         -2 |         -4 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\routes\home.tsx        | TypeScript JSX     |        -11 |          0 |         -3 |        -14 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\welcome\logo-dark.svg  | XML                |        -23 |          0 |         -1 |        -24 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\welcome\logo-light.svg | XML                |        -23 |          0 |         -1 |        -24 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\welcome\welcome.tsx    | TypeScript JSX     |        -87 |          0 |         -3 |        -90 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\package-lock.json          | JSON               |     -6,607 |          0 |         -1 |     -6,608 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\package.json               | JSON               |        -31 |          0 |          0 |        -31 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\react-router.config.ts     | TypeScript         |         -4 |         -2 |         -2 |         -8 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\tsconfig.json              | JSON with Comments |        -27 |          0 |         -1 |        -28 |
+| c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\vite.config.ts             | TypeScript         |         -7 |          0 |         -2 |         -9 |
+| c:\Users\Arnav Raj\Memory Canvas\package.json                                   | JSON               |        -42 |          0 |         -1 |        -43 |
+| c:\Users\Arnav Raj\Memory Canvas\pnpm-lock.yaml                                 | YAML               |     -2,058 |          0 |       -534 |     -2,592 |
+| c:\Users\Arnav Raj\Memory Canvas\vite.config.js                                 | JavaScript         |        -12 |         -1 |         -2 |        -15 |
+| Total                                                                           |                    |     -9,172 |         -3 |       -613 |     -9,788 |
++---------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

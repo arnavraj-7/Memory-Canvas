@@ -6,13 +6,17 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useActiveUser } from "@/contexts/ActiveUser";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AddImage from "./AddImage";
-import { Upload } from "lucide-react";
+import Upload from "./Upload";
+
 const Gallery = () => {
   const navigate = useNavigate();
-  const { active } = useActiveUser();
+  const { active,setactive } = useActiveUser();
+  useEffect(()=>{
+    localStorage.getItem("active")?setactive(JSON.parse(localStorage.getItem("active"))):navigate("/Login")
+  },[])
   const[showUpload, setshowUpload] = useState(false);
   console.log("Active User:", active);
+  const [showLoginStatus, setshowLoginStatus] = useState(true);
   const [Cards, setCards] = useState([
     {
       img: "https://plus.unsplash.com/premium_photo-1676496046182-356a6a0ed002?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFuZHNjYXBlfGVufDB8fDB8fHww",
@@ -34,30 +38,22 @@ const Gallery = () => {
     },
   ]);
   useEffect(() => {
-    if (active.uploads.length == 0) {
+    if (!active.uploads.length) {
       return;
     }
     setCards(active.uploads);
   }, [active]);
-
+  
+  useEffect(()=>{
+    const login=setTimeout(()=>{
+      setshowLoginStatus(false);
+      return removeTimeout(login);
+    },2000)
+  },[])
   return (
     <>
-      <motion.div
-        initial={{ transform: "translateY(-80px)" }}
-        animate={{ transform: "translateY(5px)" }}
-        transition={{
-          type: "spring",
-          delay: 0.1,
-          duration: 1,
-          ease: "anticipate",
-          stiffness: 200,
-        }}
-      >
-        <Alert className={""}>
-          <AlertTitle>Successfully Logged in</AlertTitle>
-          <AlertDescription>Welcome {active.name}!</AlertDescription>
-        </Alert>
-      </motion.div>
+    <div className={"min-h-screen mb-4 p-y-4 bg-black"}>
+    
       {showUpload && (
         <motion.div
         initial={{
@@ -72,6 +68,7 @@ const Gallery = () => {
           delay:0.2,
         
         }}
+        
 
         
         >
@@ -79,14 +76,14 @@ const Gallery = () => {
           <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-lg z-40" onClick={() => setshowUpload(false)} />
 
           {/* Modal Content */}
-          <div className="mb-10  fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg z-50 w-[90%] md:w-[500px]">
-            <AddImage />
+          <div className="mb-10  fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg z-50 w-[90%] md:w-[500px] overflow-y-scroll ">
+            <Upload />
             <button onClick={() => setshowUpload(false)} className="mt-4 text-red-500 bg-white" >Close</button>
           </div>
         </motion.div>
       )}
 
-      <div className="flex gap-y-2 gap-x-2">
+      <div className="grid-cols-5 pl-4 gap-y-4 grid">
         {Cards.map((c) => {
           return (
             <div
@@ -113,6 +110,7 @@ const Gallery = () => {
           Upload
           </button>
       </div>
+    </div>
     </>
   );
 };

@@ -1,0 +1,24 @@
+"filename", "language", "JSON with Comments", "JSON", "JavaScript", "YAML", "Markdown", "TypeScript", "HTML", "Docker", "XML", "CSS", "TypeScript JSX", "comment", "blank", "total"
+"c:\Users\Arnav Raj\Memory Canvas\README.md", "Markdown", 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0, -6, -14
+"c:\Users\Arnav Raj\Memory Canvas\components.json", "JSON", 0, -21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -21
+"c:\Users\Arnav Raj\Memory Canvas\eslint.config.js", "JavaScript", 0, 0, -32, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, -34
+"c:\Users\Arnav Raj\Memory Canvas\index.html", "HTML", 0, 0, 0, 0, 0, 0, -13, 0, 0, 0, 0, 0, -5, -18
+"c:\Users\Arnav Raj\Memory Canvas\jsconfig.json", "JSON with Comments", -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -9
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\Dockerfile", "Docker", 0, 0, 0, 0, 0, 0, 0, -19, 0, 0, 0, 0, -3, -22
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\README.md", "Markdown", 0, 0, 0, 0, -57, 0, 0, 0, 0, 0, 0, 0, -31, -88
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\app.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, -12, 0, 0, -4, -16
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\root.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -68, 0, -8, -76
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\routes.ts", "TypeScript", 0, 0, 0, 0, 0, -2, 0, 0, 0, 0, 0, 0, -2, -4
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\routes\home.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 0, -3, -14
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\welcome\logo-dark.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 0, -23, 0, 0, 0, -1, -24
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\welcome\logo-light.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 0, -23, 0, 0, 0, -1, -24
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\app\welcome\welcome.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -87, 0, -3, -90
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\package-lock.json", "JSON", 0, -6607, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -6608
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\package.json", "JSON", 0, -31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -31
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\react-router.config.ts", "TypeScript", 0, 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -2, -2, -8
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\tsconfig.json", "JSON with Comments", -27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -28
+"c:\Users\Arnav Raj\Memory Canvas\my-react-router-app\vite.config.ts", "TypeScript", 0, 0, 0, 0, 0, -7, 0, 0, 0, 0, 0, 0, -2, -9
+"c:\Users\Arnav Raj\Memory Canvas\package.json", "JSON", 0, -42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -43
+"c:\Users\Arnav Raj\Memory Canvas\pnpm-lock.yaml", "YAML", 0, 0, 0, -2058, 0, 0, 0, 0, 0, 0, 0, 0, -534, -2592
+"c:\Users\Arnav Raj\Memory Canvas\vite.config.js", "JavaScript", 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, -1, -2, -15
+"Total", "-", -35, -6701, -44, -2058, -65, -13, -13, -19, -46, -12, -166, -3, -613, -9788

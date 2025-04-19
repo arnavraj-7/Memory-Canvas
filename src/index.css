@@ -3,6 +3,7 @@
 
 
 
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -20,6 +21,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-Raleway: 'Raleway', sans-serif;
+  --font-Bebas:'Bebas Neue', sans-serif;
+  --font-Poppins: 'Poppins', sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
