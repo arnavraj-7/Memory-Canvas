@@ -37,7 +37,11 @@ function App() {
     name: "",
     email: "",
     password: "",
-    uploads:[]
+    uploads:[],
+    favourites:[],
+    pfp: "",
+    description: "",
+
   });
   const initialMount2 = React.useRef(true);  // Ref to track initial mount for active user
   useEffect(()=>{
