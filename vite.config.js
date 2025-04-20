@@ -11,4 +11,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    host: 'memory-canvas.local', // 👈 custom local domain
+    port: 5173, // optional, you can change this if needed
+    open: true, // auto-opens in browser
+  },
 })

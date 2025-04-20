@@ -42,7 +42,7 @@ const Upload = () => {
                 description: `${title} has been uploaded to your gallery.`,
                 duration: 500,
                 });
-
+                navigate("/Gallery")
                     }}
                   >
                     <div>
@@ -58,8 +58,8 @@ const Upload = () => {
                         onChange={(e) => (local === false ? setlocal(true) : setlocal(false))}
                       />
                       </div>
-                      <label htmlFor="upload" className="font-medium text-blue-300 hover:text-blue-400 transition-colors cursor-pointer">
-                      Upload the Image
+                      <label htmlFor="upload" className={`font-medium ${local?"animate-caret-blink":""} text-blue-300 ${local?"hover:text-blue-600":"hover:text-red-500"} transition-colors ${local?"cursor-pointer":"cursor-not-allowed"}`}>
+                     {`Upload the Image ${local?"📂":""}`}
                       </label>
                       <input
                       type="file"
