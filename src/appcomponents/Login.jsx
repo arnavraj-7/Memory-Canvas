@@ -43,7 +43,7 @@ const Login = () => {
         description: `Welcome Back ${founduser.name}`,
         duration: 3000,
       });
-      setactive(founduser);
+      setactive((prev)=>({...prev,...founduser}));
       localStorage.setItem("active", JSON.stringify(founduser));
 
       return true;

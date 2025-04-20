@@ -33,16 +33,7 @@ function App() {
   const [users, setusers] = useState([]);  // State to manage users
   const initialMount = React.useRef(true);  // Ref to track initial mount  
 
-  const [active, setactive] = useState({
-    name: "",
-    email: "",
-    password: "",
-    uploads:[],
-    favourites:[],
-    pfp: "",
-    description: "",
-
-  });
+  const [active, setactive] = useState({});
   const initialMount2 = React.useRef(true);  // Ref to track initial mount for active user
   useEffect(()=>{
     const storedAllUsers=localStorage.getItem("users");
@@ -78,7 +69,7 @@ function App() {
       setusers((prev)=>{
        return prev.map((user)=>{
           if(user.email==active.email){
-            return {...user,uploads:active.uploads}
+            return {...user,...active}
           } return user;
         })
       })

@@ -60,8 +60,10 @@ const CreateAccount = () => {
           name: entered_name,
           email: entered_email,
           password: entered_password,
-          loggedin:false,
-          uploads:[]
+          uploads:[],
+          favourites:[],
+          pfp: "https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small_2x/default-avatar-icon-of-social-media-user-vector.jpg",
+          description: "",
         },
       ]);
       toast.success("SignUp Successful", {

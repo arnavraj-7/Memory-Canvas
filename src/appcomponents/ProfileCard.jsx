@@ -6,11 +6,11 @@ const ProfileCard = () => {
   return (
     <>
       <div className="mx-auto">
-        <div className="h-auto w-72 md:w-80 flex flex-col items-center rounded-lg bg-slate-800 py-5 px-4 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/30 transition-all duration-300">
+        <div className="h-auto w-72 md:w-80 flex flex-col items-center rounded-lg bg-slate-800 py-5 px-4 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/30 transition-all duration-300 ">
           <img
             src={active.pfp}
             alt=""
-            className="rounded-full h-36 w-36 object-cover border-4 border-indigo-400"
+            className="rounded-full h-36 w-36 object-cover border-4 border-indigo-400  duration-300 hover:scale-105 ease-out "
           />
           <div className="flex justify-center items-center flex-col w-full mt-4">
             <p className="text-xl font-bold font-mono text-white">

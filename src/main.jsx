@@ -21,6 +21,7 @@ import NotFound from "./appcomponents/NotFound";
 import ProtectedRoute from "./appcomponents/ProtectedRoute";
 import Upload from "./appcomponents/Upload";
 import EditProfile from "./appcomponents/EditProfile";
+import Favourites from "./appcomponents/Favourites"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="/Gallery" element={<><ProtectedRoute><NavBar/><Gallery /></ProtectedRoute></>} />
+      <Route path="/Favourites" element={<><ProtectedRoute><NavBar/><Favourites /></ProtectedRoute></>} />
       <Route path="/Profile" element={<><ProtectedRoute><NavBar/><Profile /></ProtectedRoute></>} />
       <Route path="/Upload" element={<><ProtectedRoute><NavBar/><Upload /></ProtectedRoute></>} />
       <Route path="/EditProfile" element={<><ProtectedRoute><NavBar/><EditProfile/></ProtectedRoute></>} />

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const Upload = () => {
+  let post;
   const { active, setactive } = useActiveUser();
   const [url, seturl] = useState("");
   const [title, settitle] = useState("");
@@ -19,11 +20,12 @@ const Upload = () => {
     img: url,
     title: title,
     description: description,
-    favourite: favourite,
+    favourites: favourite,
   };
   const [newUpload, setnewUpload] = useState(c);
   const navigate = useNavigate();
   useEffect(() => {
+    clearTimeout(post)
     setnewUpload(c);
   }, [url, title, description, favourite, location]);
 
@@ -38,10 +40,14 @@ const Upload = () => {
             action=""
             onSubmit={(e) => {
               e.preventDefault();
-              setactive((prev) => ({
-                ...prev,
-                uploads: [...(prev.uploads || []), newUpload],
-              }));
+             post= setTimeout(() => {
+                setactive((prev) => ({
+                  ...prev,
+                  uploads: [...(prev.uploads || []), newUpload],
+                  favourites:[...(prev.favourites || []),favourite?newUpload:""]
+                }));
+                return 
+              }, 100);
               toast.success("Image Uploaded!", {
                 description: `${title} has been uploaded to your gallery.`,
                 duration: 500,

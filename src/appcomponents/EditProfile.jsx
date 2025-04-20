@@ -10,11 +10,13 @@ const EditProfile = () => {
   const navigate = useNavigate();
 
 return (
-    <div className="flex flex-col bg-gradient-to-r from-gray-900 to-black text-white pb-6">
-        <div className="text-center text-2xl font-bold mb-4">Preview</div>
-        <div className="flex justify-center mb-4">
+
+    <div className="flex flex-row gap-x-3 justify-evenly bg-gradient-to-r p-10 h-screen items-center from-gray-900 to-black text-white pb-6">
+        <div className="mb-4">
         <ProfileCard/>
         </div>
+        <div>
+
         <form
             action=""
             className="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-lg space-y-4"
@@ -71,6 +73,7 @@ return (
                 Save Changes
             </button>
         </form>
+        </div>
     </div>
 );
 };

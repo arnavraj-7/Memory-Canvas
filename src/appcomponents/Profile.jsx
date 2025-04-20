@@ -28,7 +28,7 @@ const Profile = () => {
 
   const { active, setactive } = useActiveUser();
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-r from-gray-900 to-black text-white pb-6">
+    <div className="min-h-screen flex flex-col p-4 bg-gradient-to-r from-gray-900 to-black text-white pb-6">
       <ProfileCard/>
       <div className="flex justify-center">
       <button 

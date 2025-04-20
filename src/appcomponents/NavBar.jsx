@@ -33,16 +33,35 @@ const Navbar = () => {
       <div className="flex items-center space-x-6 text-base font-medium">
         {active ? (
           <>
-            <NavLink
-              to="/Gallery"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-pink-400 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-pink-500 after:bottom-[-4px] after:left-0"
-                  : "hover:text-pink-300 transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:w-full hover:after:h-0.5 hover:after:bg-pink-500/50 hover:after:bottom-[-4px] hover:after:left-0 hover:after:transform hover:after:transition-all"
-              }
-            >
-              Gallery
-            </NavLink>
+            <div className="h-7 overflow-hidden hover:overflow-visible flex flex-cols items-base justify-center">
+              <ul>
+                <li>
+                  <NavLink
+                    to="/Gallery"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-pink-400 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-pink-500 after:bottom-[-4px] after:left-0"
+                        : "hover:text-pink-300 transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:w-full hover:after:h-0.5 hover:after:bg-pink-500/50 hover:after:bottom-[-4px] hover:after:left-0 hover:after:transform hover:after:transition-all"
+                    }
+                  >
+                    Gallery
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/Favourites"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-pink-400 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-pink-500 after:bottom-[-4px] after:left-0"
+                        : "hover:text-pink-300 transition-colors relative hover:after:content-[''] hover:after:absolute hover:after:w-full hover:after:h-0.5 hover:after:bg-pink-500/50 hover:after:bottom-[-4px] hover:after:left-0 hover:after:transform hover:after:transition-all"
+                    }
+                  >
+                    Favourites
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+
             <NavLink
               to="/Upload"
               className={({ isActive }) =>
@@ -98,11 +117,15 @@ const Navbar = () => {
         <button
           className="rounded-full h-10 w-10 p-1 border tracking-wider bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500  border-gray-700 hover:border-purple-400 transition-all duration-300 shadow-md hover:shadow-purple-500/30"
           onClick={handleTheme}
-          aria-label={Theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          aria-label={
+            Theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+          }
         >
           <img
             className="rounded-full object-cover h-full w-full hover:animate-pulse"
-            src={Theme == "dark" ? "src/assets/dark.png" : "src/assets/light.png"}
+            src={
+              Theme == "dark" ? "src/assets/dark.png" : "src/assets/light.png"
+            }
             alt={Theme === "dark" ? "Dark mode" : "Light mode"}
           />
         </button>
