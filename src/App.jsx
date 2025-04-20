@@ -37,13 +37,9 @@ function App() {
     name: "",
     email: "",
     password: "",
-    uploads:[{
-      img: "https://plus.unsplash.com/premium_photo-1676496046182-356a6a0ed002?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFuZHNjYXBlfGVufDB8fDB8fHww",
-      title: "Sample",
-      description:
-        "Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.",
-    },]
+    uploads:[]
   });
+  const initialMount2 = React.useRef(true);  // Ref to track initial mount for active user
   useEffect(()=>{
     const storedAllUsers=localStorage.getItem("users");
     if (storedAllUsers){
@@ -70,6 +66,10 @@ function App() {
   },[users])
   
   useEffect(()=>{
+    if(initialMount2.current){
+      initialMount2.current=false;
+      return;
+    }
     if(active){
       setusers((prev)=>{
        return prev.map((user)=>{
@@ -78,7 +78,8 @@ function App() {
           } return user;
         })
       })
-    }
+    
+      localStorage.setItem("active",JSON.stringify(active));}
     else{
       return;
     }

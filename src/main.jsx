@@ -19,20 +19,22 @@ import NavBar from "./appcomponents/NavBar";
 import AddImage from "./appcomponents/Upload";
 import NotFound from "./appcomponents/NotFound";
 import ProtectedRoute from "./appcomponents/ProtectedRoute";
+import Upload from "./appcomponents/Upload";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home/>}/>
-      <Route path="Login" element={<SignInUp />}>
+      <Route path="/Login" element={<SignInUp />}>
         <Route index element={<Login />} />
       </Route>
-      <Route path="CreateAccount" element={<SignInUp />}>
+      <Route path="/CreateAccount" element={<SignInUp />}>
         <Route index element={<CreateAccount />} />
       </Route>
 
-      <Route path="Gallery" element={<><ProtectedRoute><NavBar/><Gallery /></ProtectedRoute></>} />
-      <Route path="Profile" element={<><ProtectedRoute><NavBar/><Profile /></ProtectedRoute></>} />
+      <Route path="/Gallery" element={<><ProtectedRoute><NavBar/><Gallery /></ProtectedRoute></>} />
+      <Route path="/Profile" element={<><ProtectedRoute><NavBar/><Profile /></ProtectedRoute></>} />
+      <Route path="/Upload" element={<><ProtectedRoute><NavBar/><Upload /></ProtectedRoute></>} />
       <Route path="/*" element={<NotFound/>}/>
     </Route>
   )
