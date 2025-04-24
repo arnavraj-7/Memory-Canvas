@@ -13,21 +13,21 @@ const Upload = () => {
   const [url, seturl] = useState("");
   const [title, settitle] = useState("");
   const [description, setdescription] = useState("");
-  const [favourite, setfavourite] = useState("false");
+  const [isfavourite, setisfavourite] = useState(false);
   const [location, setlocation] = useState("");
   const [local, setlocal] = useState(false);
   let c = {
     img: url,
     title: title,
     description: description,
-    favourites: favourite,
+    isfavourite: isfavourite,
   };
   const [newUpload, setnewUpload] = useState(c);
   const navigate = useNavigate();
   useEffect(() => {
     clearTimeout(post)
     setnewUpload(c);
-  }, [url, title, description, favourite, location]);
+  }, [url, title, description, isfavourite, location]);
 
   return (
     <>
@@ -44,7 +44,7 @@ const Upload = () => {
                 setactive((prev) => ({
                   ...prev,
                   uploads: [...(prev.uploads || []), newUpload],
-                  favourites:[...(prev.favourites || []),favourite?newUpload:""]
+                  favourites:[...(prev.favourites || []),isfavourite&&newUpload]
                 }));
                 return 
               }, 100);
@@ -152,16 +152,16 @@ const Upload = () => {
                   <button
                     onClick={(e) => {
                       e.preventDefault()
-                      if (favourite) {
-                        setfavourite(false);
+                      if (isfavourite) {
+                        setisfavourite(false);
                       } else {
-                        setfavourite(true);
+                        setisfavourite(true);
                       }
                     }}
                   >
                     <img
                       src={`${
-                        favourite
+                        isfavourite
                           ? "./src/assets/h1.png"
                           : "./src/assets/heart-regular.svg"
                       }`}

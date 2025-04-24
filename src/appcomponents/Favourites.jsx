@@ -7,8 +7,9 @@ import { useActiveUser } from "@/contexts/ActiveUser";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Upload from "./Upload";
+import Carousel from "./Carousel";
 
-const Gallery = () => {
+const Favourites = () => {
   const navigate = useNavigate();
   const { active,setactive } = useActiveUser();
   // useEffect(()=>{
@@ -78,8 +79,11 @@ const Gallery = () => {
           </button>
       </div>
     </div>
+    <div>
+      <Carousel/>
+    </div>
     </>
   );
 };
 
-export default Gallery;
+export default Favourites;
